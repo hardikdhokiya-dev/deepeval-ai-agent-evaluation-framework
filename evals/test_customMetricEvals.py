@@ -19,7 +19,7 @@ def support_agent(user_input: str) -> str:
 
     return _support_agent( user_input )
 
-
+#GEval is use to create any custom metric
 correctness = GEval(
     name = "Correctness",
     criteria=(
