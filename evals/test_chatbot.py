@@ -24,10 +24,20 @@ for user_msg in [
 
 turnRelevancyMetric = TurnRelevancyMetric(threshold=0.5)
 retentionMetric = KnowledgeRetentionMetric(threshold=0.5)
-completnessMetric = ConversationCompletenessMetric(threshold=0.5)
+completenessMetric = ConversationCompletenessMetric(threshold=0.5)
 
+
+# ConversionalTestCase is for multi turn (meaning conversion is more than one step and it is ideal for chatbot automation)
 test_case = ConversationalTestCase(
     turns = turns
 )
 
-evaluate(test_cases = [test_case], metrics = [turnRelevancyMetric,retentionMetric,completnessMetric])
+evaluate(test_cases = [test_case], metrics = [turnRelevancyMetric,retentionMetric,completenessMetric])
+
+""" 
+Important Metric for chatbot automation:
+    1. Turn Relevancy : Conversational metric that determines if LLM chatbot is able to consistently generate relevant responses throughout a conversation
+    2. Knowledge Retention : Conversational metric that determines whether LLM chatbot is able to retain factual information presented throughout a conversation.
+    3. Conversation Completeness : Conversational metric that determines whether LLM chatbot is able to complete an end to end conversation by satisfying user needs.
+
+"""

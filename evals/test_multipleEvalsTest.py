@@ -13,9 +13,11 @@ from agent_instrumented import support_agent as _support_agent
 def support_agent(user_input: str) -> str:
     return _support_agent( user_input )
 
-answer_relevancy = AnswerRelevancyMetric(threshold = 0.7, model = "gpt-4o")
-step_efficiency = StepEfficiencyMetric(threshold=0.5,model = "gpt-4o")
+answer_relevancy = AnswerRelevancyMetric(threshold = 0.7, model = "gpt-4o") #whether the agent's response is on topic and relevant to the user's question.
+step_efficiency = StepEfficiencyMetric(threshold=0.5,model = "gpt-4o")  #whether the agent completed the task in the minimum number of steps (toolcalls, reasoning steps, intermediate actions)
 
+
+# Initialize the metric - whether agent is responding as per the prompt instructions context or not
 prompt_alignment = PromptAlignmentMetric(
     prompt_instructions=[
         "You are a friendly customer-support agent. "
@@ -23,7 +25,7 @@ prompt_alignment = PromptAlignmentMetric(
     ], threshold= 0.7, model = "gpt-4o"
 )
 
-
+#Create Dataset - Array of the testdata sets
 dataset = EvaluationDataset(goldens = [
 
     Golden(input = "Where is my order ORD-1042?"),

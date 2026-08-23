@@ -21,6 +21,8 @@ for user_msg in [
        turns.append(Turn(role="user",content=user_msg))
        turns.append(Turn(role="assistant",content=reply))
 
+
+# ConversationalGEval effectively evaluates multi-turn conversations by analyzing the entire dialogue using MultiTurnParams, while GEval is limited to assessing single-turn cases
 correctness = ConversationalGEval(
     name = "Correctness",
     criteria=(
@@ -34,9 +36,9 @@ correctness = ConversationalGEval(
         MultiTurnParams.CONTENT,
          ])
 
-
 test_case = ConversationalTestCase(
     turns = turns
 )
 
 evaluate(test_cases = [test_case], metrics = [correctness])
+
