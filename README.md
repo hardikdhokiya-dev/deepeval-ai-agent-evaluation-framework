@@ -270,16 +270,6 @@ Requires: `langchain` base package (added to `requirements.txt`).
 - **[LangChain Docs](https://python.langchain.com/)** — Agent and RAG patterns
 - **[OpenAI API Reference](https://platform.openai.com/docs/api-reference)** — GPT-4o models
 
-## 📄 License
-
-This project is open source and available under the MIT License.
-
-## 🙋 Support
-
-For issues, questions, or suggestions:
-- Open a GitHub issue
-- Check existing issues for similar problems
-- Refer to CLAUDE.md for internal development guidance
 
 ---
 
